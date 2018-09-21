@@ -5,6 +5,7 @@ import './App.css';
 
 import SignUp from './JokesComponents/SignUp';
 import SignIn from './JokesComponents/SignIn';
+import Jokes from './JokesComponents/Jokes';
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
         </header>
       <Route exact path='/signup' component={SignUp} />
       <Route exact path='/signin' component={SignIn} />
+      <Route exact path='/jokes' component={Jokes} />
       </div>
     );
   }
