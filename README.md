@@ -14,9 +14,20 @@
 ## Questions - Self Study - You can exercise your Google-Fu for this and any other _Sprint Challenge_ in the future.
 
 1. What is the purpose of using _sessions_?
+
+HTTP requests are inherintly stateless, and using sessions allows for persisting information related to a user across a server. This is very useful with authenticating a user on different pages, such as login, and the user being able to view information that requires specific authorization.
+
 2. What does bcrypt do to help us store passwords in a secure manner.
+
+It hashes the password, so it cannot be viewed as plain text. 
+
 3. What does bcrypt do to slow down attackers?
+
+It hashes the password multiple times making figuring out the plain text version of the password more difficult for hackers. 
+
 4. What are the three parts of the JSON Web Token?
+
+Header, Payload & Signature.
 
 ## Project Description - User Management System - Jokes On YoU!
 
