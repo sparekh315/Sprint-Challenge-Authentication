@@ -8,17 +8,27 @@ class Jokes extends Component {
     };
 
 
+    logOutHandler = e => {
+        localStorage.removeItem('jwt');
+        this.props.history.push('/signin');
+      }
+
+
     render() {
       return (
         <div className="JokesContainer">
-        
-              {this.state.jokes.map(joke => (
-                  <li key={ joke.id }>
-                  <p>Type: { joke.type }</p>
-                  <p>Setup: { joke.setup }</p>
-                  <p>Punchline: { joke.punchline }</p>
-                  </li>
-              ))}
+         <div class="logout-btn">
+           <button onClick={this.logOutHandler}>Logout</button>
+         </div>
+         <div className="jokes-list">
+            {this.state.jokes.map(joke => (
+                <li key={ joke.id }>
+                <p>Type: { joke.type }</p>
+                <p>Setup: { joke.setup }</p>
+                <p>Punchline: { joke.punchline }</p>
+                </li>
+            ))}
+         </div>
         </div>
       );
     }
@@ -37,9 +47,11 @@ class Jokes extends Component {
           })
           .catch(err => {
               console.error('Axios Error:', err);
+              this.props.history.push('/signin');
            
           });
         }
+
   }
   
   export default Jokes;

@@ -44,6 +44,7 @@ class SignUp extends Component {
        .then(res => {
            console.log(res.data);
            localStorage.setItem('jwt', res.data.token);
+           this.props.history.push('/jokes');
        })
        .catch(err => {
            console.error("Axios Error:", err);
